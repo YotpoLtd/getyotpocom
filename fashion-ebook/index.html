@@ -1,0 +1,1059 @@
+
+<!DOCTYPE html><html lang="en-US"><head> <script src="//code.jquery.com/jquery.min.js"></script>  <script type='text/javascript'>var _vis_opt_account_id = 200644;
+var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+document.write('<s' + 'cript src="' + _vis_opt_protocol +
+'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a='+_vis_opt_account_id+'&url='
++encodeURIComponent(document.URL)+'&random='+Math.random()+'" type="text/javascript">' + '<\/s' + 'cript>');</script> <script type='text/javascript'>if(typeof(_vis_opt_settings_loaded) == "boolean") { document.write('<s' + 'cript src="' + _vis_opt_protocol +
+'d5phz18u4wuww.cloudfront.net/vis_opt.js" type="text/javascript">' + '<\/s' + 'cript>'); }
+// if your site already has jQuery 1.4.2, replace vis_opt.js with vis_opt_no_jquery.js above</script> <script type='text/javascript'>if(typeof(_vis_opt_settings_loaded) == "boolean" && typeof(_vis_opt_top_initialize) == "function") {
+        _vis_opt_top_initialize(); vwo_$(document).ready(function() { _vis_opt_bottom_initialize(); });
+}</script>  <script type="text/javascript">$.ajax({
+  url: '//munchkin.marketo.net/munchkin.js',
+  dataType: 'script',
+  cache: true,
+  success: function() {
+    Munchkin.init('828-GCW-581');
+  }
+});</script><script>(function() {
+    var redcross = window.redcross = [];
+    if (!redcross.initialize)
+        if (redcross.invoked) window.console && console.error && console.error('Redcross snippet included twice.');
+        else {
+            redcross.invoked = !0;
+            redcross.methods = ['trackSubmit', 'trackClick', 'trackLink', 'trackForm', 'pageview', 'identify', 'reset', 'group', 'track', 'ready', 'alias', 'page', 'once', 'off', 'on'];
+            redcross.factory = function(t) {
+                return function() {
+                    var e = Array.prototype.slice.call(arguments);
+                    e.unshift(t);
+                    redcross.push(e);
+                    return redcross
+                }
+            };
+            for (var t = 0; t < redcross.methods.length; t++) {
+                var e = redcross.methods[t];
+                redcross[e] = redcross.factory(e)
+            }
+        }
+
+    var rc = document.createElement('script');
+    rc.src = 'https://er.yotpo.com/redcross/redcross.min.js';
+    rc.type = 'text/javascript';
+    rc.async = 'true';
+    rc.onload = rc.onreadystatechange = function() {
+        var redcrossq = redcross;
+        redcross = window.redcross;
+
+        window.analytics = {};
+        window.analytics.SNIPPET_VERSION='1.0.0';
+        redcross.initialize({'Segmentio': {apiKey: 'BxhQOA0Cxo4wZRJqZ427DUPJPjUuAfox'}});
+
+        while (redcrossq && redcrossq.length > 0) {
+            var args = redcrossq.shift();
+            var method = args.shift();
+            if (redcross[method]) redcross[method].apply(redcross, args);
+        }
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(rc, s);
+})();</script><script>function passUtmParams($form,ctx){var came_from = getParameterByName('came_from');
+var page_t = getParameterByName('page_title');
+var list =['display','directory','cpc','cpl','media','banners'];
+var s_medium = getParameterByName('s_medium') ;
+var utm_medium = getParameterByName('utm_medium') ;
+
+var utm_string = builed_utm_string();
+   if (came_from !== '') {
+    if (came_from.indexOf('_blog') != -1){
+      $form.vals({'utm_source__c':'blog','utm_medium__c':'link','utm_campaign__c':'eBook (Fashion Benchmark) - '+came_from , 'UTM_Content__c':page_t });
+    }
+    else{
+   $form.vals({'utm_source__c':'Yotpo.com','utm_medium__c':'link','utm_campaign__c':'eBook (Fashion Benchmark) - '+came_from });
+ }
+ }
+  if (utm_string !== '^^') {
+      $form.vals({'UTM_Term__c':utm_string});
+
+}
+
+for (i = 0; i < list.length; i++) {
+  if (s_medium.indexOf(list[i]) !== -1  || utm_medium.indexOf(list[i]) !== -1) {
+   $form.vals({'LeadSource':'Acquisition'});
+}
+}
+$form.vals({'Segment_ID__c':redcross.user().anonymousId()});
+
+
+var prop_string='';
+$form.onSubmit(function(){
+        // Get the form field values
+        var vals = $form.vals();
+
+        var dict = {
+        url: document.URL,
+        path: location.pathname,
+        title:'eBook (Fashion Benchmark)'};
+
+        for (var key in vals) {
+          if (key !== 'munchkinId' && key !== 'formid'){
+
+              dict['formField'+key]=vals[key];
+
+            }
+
+
+        }
+        dict['marketoFormId']=vals['formid']
+        redcross.track( 'Form Submitted', dict);
+});
+
+}</script> <meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta charset="UTF-8"><meta content="initial-scale=1,maximum-scale=1,user-scalable=no" name=
+"viewport"><link type="text/css" media="all" href="https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/cache/autoptimize/css/autoptimize_6f371804979a1cc9fb50ffe2f37b7587.css" rel="stylesheet" /><title>eBook Download | Yotpo.com</title><link rel="shortcut icon" href="https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/favicon.ico" type="image/x-icon"/><meta content="noindex,follow" name="robots"><link href=
+'//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800' rel=
+'stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel=
+'stylesheet' type='text/css'><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/framework.css" id=
+"layers-framework-css" media="all" rel="stylesheet" type="text/css"><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/updatelp/newFramework.css" id=
+"new_layers-framework-css" media="all" rel="stylesheet" type="text/css"><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/components.css" id=
+"layers-components-css" media="all" rel="stylesheet" type="text/css"><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/responsive.css" id=
+"layers-responsive-css" media="all" rel="stylesheet" type="text/css"><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/style.css" id=
+"layers-style-css" media="all" rel="stylesheet" type="text/css"><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/animate.css" id=
+"layers-icon-fonts-css" media="all" rel="stylesheet" type="text/css"> <script src=
+    "https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/jquery.js" type=
+    "text/javascript"></script> <script src=
+    "https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/jquery-migrate.min.js"
+    type="text/javascript"></script> <script src=
+    "https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/plugins.js" type=
+    "text/javascript"></script> <link href="http://localhost/layers/xmlrpc.php?rsd" rel="EditURI" title=
+"RSD" type="application/rsd+xml"><link href="http://localhost/layers/wp-includes/wlwmanifest.xml" rel=
+"wlwmanifest" type="application/wlwmanifest+xml"><meta content="WordPress 4.2.2" name="generator"><link href=
+"https://www.yotpo.com/wp-content/themes/tg/yotpo/landing_page_assets/landing_page.html"
+rel="canonical"><link href=
+"https://www.yotpo.com/wp-content/themes/tg/yotpo/landing_page_assets/landing_page.html"
+rel="shortlink"><style type="text/css">.sitetitle,
+        .tagline {
+            position: absolute;
+            clip: rect(1px, 1px, 1px, 1px);
+        }</style><style id="fit-vids-style">.fluid-width-video-wrapper {
+            width: 100%;
+            position: relative;
+            padding: 0;
+        }
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper object,
+        .fluid-width-video-wrapper embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+		.width-615{
+			width:624px;
+		}
+		.width-473{
+
+		}
+		.space-between {
+			padding-left: 58px;
+		}
+		.heading-guid{
+			padding-top:50px;
+			color:#57575f;
+			font-weight: 100;
+			line-height:70px;
+			letter-spacing: -1.5px;
+		}
+		.landscape-img{
+			display: none;
+		}
+		.contact-number{
+			margin:10px;
+
+		}
+		.text-fit{
+		    float: right;
+			max-width: 615px;
+		}
+		.footer-site{
+			font-size:14px;
+		}
+		.containes{
+			display: none;
+		}
+
+		.content-vertical-massive {
+		   padding-top: 63px;
+		   padding-bottom: 31px;
+		}
+		#layers-widget-column-15 {
+		   margin-top: -114px;
+		}
+
+		.text-fit {
+			float: right;
+			max-width: 628px;
+		}
+
+
+		.footer-site .row {
+			padding-top: 35px;
+			padding-bottom: 35px;
+		}
+
+		#footer .column.span-6{
+			margin-bottom: 0;
+		}
+
+		#footer .column .textwidget{
+			margin-top:8px;
+		}
+
+		#layers-widget-column-14 .excerpt p{
+			text-align:left;
+		}
+
+		.widget.widget_text .textwidget span.copyright {
+			font-weight: 700;
+			color: #fff;
+			width: 57px;
+			height: 18px;
+			overflow: hidden;
+			float: left;
+			margin-top: 4px;
+		}
+		#footer .alignnone.size-full.wp-image-38 {
+			margin-top: -3px;
+			float: left;
+		}
+        .mktoForm .mktoError .mktoErrorMsg {
+    border: 1px solid #dab1b1 !important;
+    background: #fff1f0 !important;
+    color: #c08280 !important;
+    font-size: 13px !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    padding: 7px 17px !important;
+    margin-top: 3px !important;
+}
+
+.mktoForm .mktoError .mktoErrorArrowWrap {
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%,-50%) !important;
+    -moz-transform: translate(-50%,-50%) !important;
+    -webkit-transform: translate(-50%,-50%) !important;
+    -ms-transform: translate(-50%,-50%) !important;
+}
+.mktoForm .mktoError .mktoErrorArrow {
+    background: #fff1f0 !important;
+    border: 1px solid #dab1b1 !important;
+    border-bottom: 0 !important;
+}
+.mktoError{
+
+    right: 40px !important;
+    bottom: -31px !important;
+}
+form.mktoForm input#FirstName {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/firstname.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm input#LastName {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/lastname.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm input#Email {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/email.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm input#Phone {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/phone.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm input#Website {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/website.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm input#Domain__c {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/website.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm input#Title {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/Job.png");
+    background-repeat: no-repeat;
+    background-position: 12px center;
+}
+form.mktoForm textarea {
+    background-image:url("https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/images/contact/message.png");
+    background-repeat: no-repeat;
+    background-position: 12px 11px;
+    min-height:66px;
+}
+.mktoForm select.mktoField, .mktoForm input[type=text], .mktoForm input[type=url], .mktoForm input[type=email], .mktoForm input[type=tel], .mktoForm input[type=number], .mktoForm input[type=date]
+{padding-left: 48px !important;}</style><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/owl-carousel/owl.carousel.css"
+rel="stylesheet"><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/owl-carousel/owl.theme.css"
+rel="stylesheet"> <script type="text/javascript" src="https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/cache/autoptimize/js/autoptimize_095dd25ec012e3f4ecbe29116c710bec.js"></script></head><body class=
+"home page page-id-6 page-template page-template-builder page-template-builder-php logged-in layers-header-sticky has-site-logo"> <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TQBMK4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQBMK4');</script>  <script type="text/javascript">var _kiq = _kiq || [];
+  (function(){
+    setTimeout(function(){
+    var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+    s.async = true; s.src = '//s3.amazonaws.com/ki.js/52634/bjo.js'; f.parentNode.insertBefore(s, f);
+    }, 1);
+  })();</script> <section class="wrapper invert off-canvas-right" id="off-canvas-right"> <a class="close-canvas l-close" data-toggle="#off-canvas-right"
+data-toggle-class="open"></a><div class="row content nav-mobile"><nav class="nav nav-vertical"><ul class="menu" id="menu-menu"><li class=
+"menu-item menu-item-type-custom menu-item-object-custom menu-item-17"
+id="menu-item-17"> <a href="#top">Request a Demo</a></li></ul></nav></div></section><section class="wrapper-site"><header class="header-site header-sticky header-left"><div class="container clearfix"><div class="logo"> <a href="https://www.yotpo.com/" class="site-logo-link" rel="home"> <img width="40" height="40" src="https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/uploads/2015/08/logo_white.png" class="site-logo attachment-medium" alt="logo_white" data-size="medium" pagespeed_url_hash="1539355258"> </a><div class="site-description"><h3 class="sitename sitetitle"><a href=
+"http://localhost/layers">Landing Page</a></h3><p class="tagline"></p></div></div></div></header><section class="wrapper-content" id="wrapper-content"><section class="widget row content-vertical-massive" id=
+"layers-widget-column-14"><div class="row container list-grid"><div class=
+"layers-masonry-column layers-widget-column-324 span-5 last column-flush"
+id="layers-widget-column-14-324"><div class="media no-push-bottom width-473 image-top medium"><div class="media-body text-right"><div class="excerpt"><p><img class="fr-dii fr-fin img-responsive" src=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/Fashion-Benchmark_01.png"></p></div></div></div></div><div class=
+"layers-masonry-column layers-widget-column-850 span-7 column-flush"
+id="layers-widget-column-14-850"><div class="media no-push-bottom image-top large text-fit"><div class="media-body text-left"><h5 class="heading heading-guid">Get Your<span class="ulti-guide" style="font-weight:700"> Fashion Industry Data Report</span></h5><div class="excerpt"><p style="font-size: 16px; color: #56575f; letter-spacing: -.3999px; line-height:28px;"><strong>Access data from 3,000 stores in the fashion industry, 12,410,892 purchases and 1,300,000 reviews</strong><br><br>Find out: <br> - What’s the average order value for fashion? <br> - How much traffic do fashion stores get from mobile? <br> - How many reviews should your fashion store have?<span class="containes"></span></p></div><a id="inline" class="button btn-large" href="#data"> Download Now</a></div></div></div><div class=
+"layers-masonry-column landscape-img layers-widget-column-324 last column-flush pull-left"
+id=""><div class="media no-push-bottom image-top medium"><div class="media-body text-right"><div class="excerpt"><p><img class="fr-dii img-responsive fr-fin" src="https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/Fashion-Benchmark-eBook-715-×-511.png"></p></div></div></div></div></div></section><div style="display:none"><div id="data"><div class="hubspot_container" style="background-color:#f8f8f8 !important;"><div class="hbs_content"><h3 class="hbsheading" style="font-family:'Roboto Slab';color:#57575f;">Download Now</h3></div><div class="form-group"> <script src="//app-lon04.marketo.com/js/forms2/js/forms2.min.js"></script> <form id="mktoForm_1419"></form> <script>MktoForms2.loadForm("//app-lon04.marketo.com", "828-GCW-581", '1419',passUtmParams);</script> </div></div></div></div><section class="widget row content-vertical-massive" id=
+"layers-widget-column-15"><div class="row container list-grid"></div></section><div id="back-to-top"> <a href="http://localhost/layers/#top">Back to top</a></div></section><footer class="footer-site invert" id="footer"><div class="container clearfix"><div class="row"><div class="column span-6"><section class="widget widget_text" id="text-3"><div class="textwidget"> <img alt="logo" class=
+"alignnone size-full wp-image-38" height="29"
+src=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/logo.png"
+style=
+"margin-right:10px;vertical-align:middle;"
+width="29"> <span class="copyright">© YOTPO 2015</span> <span class="contact-number"> +1(646) 977-7959</span></div></section></div><div class="column span-6 last"><section class="widget widget_text" id="text-4"><div class="textwidget"><p><a class="footer_social_icon footer_google"
+href=
+"https://plus.google.com/b/100850542490341505903/100850542490341505903/posts"> </a> <a class=
+"footer_social_icon footer_linkdin" href=
+"https://www.linkedin.com/company/yotpo"></a> <a class="footer_social_icon footer_twitter"
+href="http://www.twitter.com/yotpo"></a> <a class="footer_social_icon footer_facebook"
+href="https://www.facebook.com/yotpo"></a></p></div></section></div></div></div></footer></section><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/inline.css" id=
+"layers-inline-styles-css" media="all" rel="stylesheet" type="text/css"><style id="layers-inline-styles-inline-css" type="text/css">body {
+            font-family: Open Sans, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .heading {
+            font-family: Roboto Slab, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        .content-vertical-massive {
+            padding-top: 4%;
+        }
+        button,
+        .button,
+        input[type=submit] {
+            font-family: Open Sans, "Helvetica Neue", Helvetica, sans-serif;
+        }
+				.hs-form-field label {display:none;}
+		.hs-error-msgs label {display:block !important;color:#ff0000;font-size:10px;}
+        .header-site,
+        .header-site.header-sticky {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .footer-site {
+            background-color: #1c1e2a;
+        }
+        .title-container {
+            background-color: #ffffff;
+        }
+        input[type="button"],
+        input[type="submit"],
+        button,
+        .button,
+        .form-submit input[type="submit"],
+        .invert input[type="button"],
+        .invert input[type="submit"],
+        .invert button,
+        .invert .button,
+        .invert .form-submit input[type="submit"] {
+            background-color: #F3F3F3;
+            color: rgba(0, 0, 0, .85);
+        }
+        input[type="button"]:hover,
+        input[type="submit"]:hover,
+        button:hover,
+        .button:hover,
+        .form-submit input[type="submit"]:hover,
+        .invert input[type="button"]:hover,
+        .invert input[type="submit"]:hover,
+        .invert button:hover,
+        .invert .button:hover,
+        .invert .form-submit input[type="submit"]:hover {
+            background-color: #f7f7f7;
+            color: rgba(0, 0, 0, .85);
+        }
+        .copy a:not(.button),
+        .story a:not(.button) {
+            color: #F3F3F3;
+            border-bottom-color: #F3F3F3;
+        }
+        .copy a:not(.button):hover,
+        .story a:not(.button):hover {
+            color: #dbdbdb;
+            border-bottom-color: #dbdbdb;
+        }
+        #layers-widget-column-3 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-3-288 h5 {
+            font-size: 4.5rem !important;
+            font-weight: 700
+        }
+        #layers-widget-column-3-288 h5:after {
+            content: "";
+            background: #b6b6b6;
+            height: 5px;
+            width: 50px;
+            position: relative;
+            display: block;
+            margin: 10px 3px;
+        }
+        #layers-widget-column-3-288 .excerpt {
+            font-size: 16px;
+            color: #888888;
+        }
+        #layers-widget-column-3-288 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-3-215 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5 {
+            background-color: #2f84ee;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5 .list-grid {
+            margin-top: 20px
+        }
+        #layers-widget-column-5-971 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5-473 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5-544 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5-880 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5-39 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5-168 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-5 h3 {
+            font-size:18px;
+        }
+        #layers-widget-column-6 h3 {
+            font-weight:300;
+        }
+        #layers-widget-column-6 {
+            background-color: #2c2f3d;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-6 h5:after {
+            content: "";
+            background: #b6b6b6;
+            height: 5px;
+            width: 50px;
+            position: relative;
+            display: block;
+            margin: 20px auto;
+        }
+        #layers-widget-column-6-971 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-6-473 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-6-544 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+		.#layers-widget-column-14-324{
+			    max-width: 473px;
+		}
+        #layers-widget-column-7 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-7 h3:after {
+            content: "";
+            background: #b6b6b6;
+            height: 5px;
+            width: 50px;
+            position: relative;
+            display: block;
+            margin: 30px auto;
+        }
+        #layers-widget-column-7 .excerpt {
+            font-style: italic;
+            font-size: 14px;
+            color:#a6a6a6;
+        }
+        #layers-widget-column-7-971 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-7-453 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-7-170 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-7 .section-title {
+            margin-bottom:0px;
+        }
+        #layers-widget-column-7-971, #layers-widget-column-7-453, #layers-widget-column-7-170, #layers-widget-column-7-150{
+            opacity:0.4;
+        }
+        .highlight {opacity:1 !important;}
+        #layers-widget-column-8 {
+            background-color: #2f84ed;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-8 .btn-large {
+            font-family: "Open Sans", sans-serif;
+            background: #fec600;
+            border: 5px solid transparent;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            padding: 12px 15px;
+            text-align: center;
+            color: #56575f;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        #layers-widget-column-8 .btn-large:hover {
+            opacity: 0.9;
+        }
+        #layers-widget-column-8-544 {
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        #layers-widget-column-8 h3 {
+            font-weight:300;
+        }
+        .container {
+            max-width: 1200px;
+        }
+    #layers-widget-column-14 { background-repeat: no-repeat;background-position: center;} #layers-widget-column-14 .btn-large {
+    font-family: "Open Sans",sans-serif;
+    background: #fec800;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding: 11px 35px;
+    text-align: center;
+    color: #56575f;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform:uppercase;
+    }
+
+    #layers-widget-column-14 .btn-large:hover {
+    opacity:0.9;
+    }
+
+    #layers-widget-column-14 h5 {
+    font-size:56px; <!--tft changes 51px font size to 56px-->
+	font-weight:300;
+    }
+    #layers-widget-column-14 {
+    font-size:16px;
+    }
+#layers-widget-column-14 {
+padding-top:0px;
+}
+
+    #layers-widget-column-14 h5:after {
+    content: "";
+    background: #e2e2e2;
+    height: 5px;
+    width: 50px;
+    position: relative;
+    display: block;
+    margin:30px 3px 10px 3px;
+    }
+	#layers-widget-column-14 .excerpt {
+		font-size:16px;
+		padding:15px 0;
+
+	}
+
+
+
+	#layers-widget-column-15 {
+        margin-top:-110px;
+    }
+	#layers-widget-column-14-324 { background-repeat: no-repeat;background-position: center;}  #layers-widget-column-14-850 { background-repeat: no-repeat;background-position: center;}  #layers-widget-column-15 { background-color: #2f84ed; background-repeat: no-repeat;background-position: center;}
+    .fancybox-close {
+		background-image: url('https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/Close-16.png');
+		background-repeat: no-repeat !important;
+	}
+	@media screen and (max-width: 1100px) {
+		.heading-guid{
+			    padding-top: 64px;
+		}
+		#layers-widget-column-14 h5 {
+			font-size: 54px;
+		}
+		.text-fit{
+			    max-width: 527px;
+		}
+
+		span.ulti-guide {
+			margin-right: auto;
+		}
+	}
+	@media screen and (max-width: 960px) {
+		.row container list-grid .column-flush.span-5 {
+			width: 46.74% !important;
+		}
+		.heading-guid {
+			padding-top: 64px;
+		}
+		.row container list-grid .column-flush.span-7 {
+			width: 53.1% !important;
+		}
+		#layers-widget-column-14 h5{
+			    font-size: 42px;
+				line-height: 52px;
+		}
+		.heading-guid{
+			padding-top:65px;
+			line-height:50px;
+		}
+		#layers-widget-column-14 .excerpt p img{
+			width: 100%;
+		}
+
+
+		span.ulti-guide {
+			margin-right: 68px;
+		}
+
+		.content-vertical-massive .list-grid .layers-widget-column-324.span-5{
+			    width: 433px;
+				margin-right: 25px;
+		}
+
+		.content-vertical-massive .list-grid .layers-widget-column-850.span-7{
+			    width: 434px;
+		}
+
+		.heading-guid {
+			padding-top: 115px;
+		}
+
+		.footer-site {
+			padding-top: 24px;
+			padding-bottom: 24px;
+		}
+
+		.content-vertical-massive {
+			padding-top: 50px;
+			padding-bottom: 44px;
+		}
+	}
+
+	@media screen and (max-width: 950px) {
+		#layers-widget-column-14-324 {
+		width:100%;
+		margin-top:20px;
+		display: none;
+	}
+		.landscape-img{
+			display: block;
+			float: left;
+			width:100%;
+		}
+
+		.text-fit {
+		    max-width: 80%;
+			margin: auto;
+			float: none;
+		}
+		span.ulti-guide {
+			margin-right: 0px;
+		}
+		#layers-widget-column-14 h5{
+			padding-top:0px;
+			text-align:center;
+		}
+		.text-fit {
+			width: 100%;
+			margin: auto;
+			float: none;
+			max-width: 92%;
+		}
+
+		.content-vertical-massive .list-grid .layers-widget-column-850.span-7{
+			width:100%;
+		}
+
+		#layers-widget-column-14 .excerpt p {
+			text-align: center;
+			text-indent: 0 !important;
+			letter-spacing: -.5px !important;
+		}
+		#layers-widget-column-14-850 {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		#layers-widget-column-15 {
+			margin-top: -130px;
+		}
+
+		.footer-site {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+
+		#layers-widget-column-14 h5:after {
+			content: "";
+			margin: 30px auto 10px auto;
+		}
+
+		#layers-widget-column-14-850 .media-body {
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: 817px) {
+		.heading-guid{
+			padding-top:37px;
+			line-height:50px;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.heading-guid{
+			padding-top: 25px;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+
+	.width-615{
+		width: 100%;
+		min-height: 400px;
+	}
+	#layers-widget-column-14 h5{
+			line-height: 50px;
+		}
+	.media.image-top .media-body{
+		width: 100%;
+	}
+	.text-fit{
+		    width: 100%;
+    margin: auto;
+    float: none;
+	}
+
+	#layers-widget-column-14 h5 {
+		font-size: 42px;
+		padding-top:20px;
+	}
+	#layers-widget-column-14 h5:after {
+		margin: 30px auto;
+		margin-bottom: 10px;
+	}
+	#layers-widget-column-14 .excerpt {
+		font-size: 14px;
+	}
+	#layers-widget-column-14-850 {
+		width:100%;
+	}
+
+	#layers-widget-column-14-850 .media-body{
+		text-align:center
+	}
+	#layers-widget-column-14-324 .media-body{
+		text-align:center
+	}
+
+	#layers-widget-column-14 .excerpt p{
+		letter-spacing: -.39999px !important;
+	}
+
+	.widget.widget_text .textwidget span.copyright{
+	    font-weight: 700;
+		color: #fff;
+		width: 57px;
+		height: 18px;
+		overflow: hidden;
+		float: left;
+		margin-top: 4px;
+	}
+
+	#footer .alignnone.size-full.wp-image-38{
+		margin-top:-3px;
+		float:left;
+	}
+
+}
+
+	@media screen and (max-width: 480px) {
+    #layers-widget-column-15 {
+		margin-top: -140px;
+		height: 94px;
+	}
+	.space-between{
+		padding: 0px !important;
+
+	}
+	#layers-widget-column-14 h5 {
+		font-size: 42px;
+		padding-top: 20px;
+	}
+	#layers-widget-column-14 .excerpt p {
+		font-size: 15px!important;
+		text-indent: 2px !important;
+	}
+	.column.span-6:nth-child(2n+2) {text-align:center;}
+
+	.text-fit {
+		max-width: 100%;
+	}
+
+	#layers-widget-column-14-850 {
+		margin-bottom: 5px;
+	}
+
+	.widget.widget_text .textwidget span.copyright{
+	    font-weight: 700;
+		color: #fff;
+		overflow: hidden;
+		width: 64px;
+		float: left;
+		height: 20px;
+		margin-top: 3px;
+	}
+
+	#footer .column.span-6{
+		width: 56%;
+		float: left;
+	}
+
+	#footer .column.span-6.last{
+		width: 44%;
+		float: left;
+		margin-top: -7px;
+	}
+
+	.footer-site {
+		padding-top: 23px;
+		padding-bottom: 23px;
+	}
+
+	#footer .alignnone.size-full.wp-image-38{
+		margin-top:-3px;
+		float:left;
+	}
+
+		#layers-widget-column-14 .excerpt p{
+			letter-spacing: -.5px !important;
+		}
+
+		.contact-number {
+			margin: 0px;
+		}
+}
+
+	@media screen and (max-width: 479px) {
+		.container{
+			width: 298px;
+
+			padding: 0px;
+		}
+		.container > .span-7{
+			padding: 0px;
+		}
+		#layers-widget-column-14 h5 {
+			font-size: 27.5px;
+			padding-top: 20px;
+			letter-spacing:0;
+			line-height: 34px
+		}
+		.contact-number {
+			margin: auto;
+			float: right;
+			width: 50%;
+			text-align: right;
+			margin-right: 5px;
+		}
+		.containes{
+			display: block;
+		}
+
+		#layers-widget-column-14 .excerpt p {
+			font-size: 14px!important;
+			text-indent: 0px!important;
+		}
+
+		.media.large p:not(:first-child), .media.large .button {
+			margin-top: 6px;
+			margin-bottom: 10px;
+		}
+
+		#footer .column.span-6 {
+			width: 100%;
+			float: none;
+		}
+
+		.footer_social_icon {
+			width: 39px;
+			height: 39px;
+		}
+
+		#footer .column.span-6.last {
+			width: 100%;
+			float: none;
+			margin-top: 49px;
+		}
+
+		.widget.widget_text .textwidget p{
+			width:243px;
+		}
+		.footer-site .row {
+			padding-top: 33px;
+			padding-bottom: 33px;
+		}
+
+		.footer-site {
+			padding-top: 0px;
+			padding-bottom: 0px;
+		}
+
+		#layers-widget-column-14 .excerpt p{
+			letter-spacing: -.39999px !important;
+		}
+		.hbsheading{
+			font-size:22px;
+		}
+		.hubspot_container{
+			max-width: auto;
+			min-width: auto;
+			width: 100%;
+		}
+	}</style><link href=
+"https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/custom.css" id=
+"layers-custom-styles-css" media="all" rel="stylesheet" type="text/css"> <script src=
+    "https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/themes/tg/yotpo/landing_page_assets/layers.framework.js"
+    type="text/javascript"></script> <script>$("a#inline").fancybox({
+		'hideOnContentClick': false
+	});
+
+
+        function download_ebook_file(){
+        if ("Yotpo Fashion Industry Data_Benchmarks & Insights" != ''){
+      var link = document.createElement('a');
+      link.href = "https://1blpel1g8srf4bxty2g1fegr-wpengine.netdna-ssl.com/wp-content/uploads/2016/03/Yotpo-Fashion-Industry-Data_Benchmarks-Insights.pdf";
+      link.download = "Yotpo Fashion Industry Data_Benchmarks & Insights.pdf";
+      link.dispatchEvent(new MouseEvent('click'));
+
+    }
+}
+          window.onload = function(){
+      MktoForms2.whenReady(function (form){
+      form.onSuccess(function(values, followUpUrl){
+      download_ebook_file();
+  }); });
+      }</script>  <script src="//my.hellobar.com/5592d570f573f05fb670a55f28c9b8a0c708c032.js" type="text/javascript" charset="utf-8" async="async"></script>  <script>function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function builed_utm_string() {
+  var qury_string = "" ;
+  var s_source = getParameterByName('s_source') ;
+  qury_string = qury_string + s_source ;
+
+  var s_medium = getParameterByName('s_medium') ;
+  qury_string = qury_string + "^" + s_medium ;
+
+  var s_campaign = getParameterByName('s_campaign') ;
+  qury_string = qury_string + "^" + s_campaign ;
+return  qury_string ;
+}</script> <script>var qury_string = "" ;
+
+  var s_source = getParameterByName('utm_source') ;
+  if (s_source !== '' ){
+     qury_string = qury_string + "s_source=" + s_source ;
+   }else{s_source = getParameterByName('s_source') ;
+   if (s_source !== '' ){
+     qury_string = qury_string + "s_source=" + s_source ;}
+}
+
+  var s_medium = getParameterByName('utm_medium') ;
+  if (s_medium !== '' ){
+     qury_string = qury_string + "\u0026s_medium=" + s_medium ;
+   }else{s_medium = getParameterByName('s_medium') ;
+   if (s_medium !== '' ){
+     qury_string = qury_string + "\u0026s_medium=" + s_medium ;}
+}
+
+  var s_campaign = getParameterByName('utm_campaign') ;
+  if (s_campaign !== '' ){
+     qury_string = qury_string + "\u0026s_campaign=" + s_campaign ;
+   }else{s_campaign = getParameterByName('s_campaign') ;
+   if (s_campaign !== '' ){
+     qury_string = qury_string + "\u0026s_campaign=" + s_campaign ;}
+}
+
+$(function() {
+   $("a").attr('href', function(i, h) {
+if(typeof h !== "undefined"){
+if (document.location.href.indexOf('/blog/') === -1){
+  if (qury_string !== ''){
+     if (h.indexOf('#') !== 0 ){
+     return h + (h.indexOf('?') != -1 ?  "\u0026"+qury_string  : "?" + qury_string );
+   }
+ }
+}
+}
+   });
+});</script> </body></html>

@@ -1261,32 +1261,8 @@ if  (href. indexOf('#') != -1 || href. indexOf('request-a-demo') != -1 || href. 
 
         return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 
-    }</script> <div class="rad_popup" id="rad_popup"><div class="rad_popup_inner"><div class="rad_popup_header"> <a href="http://wwwyotpo.staging.wpengine.com" role="home"> <img src="http://wwwyotpo.staging.wpengine.com/wp-content/themes/tg/images/yotpo_logo_blue_big.png" alt="YotPo logo" title="YotPo logo" /> </a><div class="rad_popup_close" id="rad_popup_close"> <span></span> <span></span></div></div><div class="rad_popup_form_wrapper"><div class="rad_popup_form_container"><div class="rad_popup_form_table"><div class="rad_popup_form_tablecell"><div class="rad_popup_form"><h2>Interested in <strong>Yotpo</strong>?</h2><div class="rad_popup_subtitle"><p>Schedule a demo with one of our marketing consultants to learn how Yotpo <span style="color: #ffffff;">generates reviews</span> and turn them <span style="color: #ffffff;">into sales.</span></p></div><form id="mktoForm_1282"></form> <script>MktoForms2.loadForm("//app-lon04.marketo.com", "828-GCW-581", '1282',passUtmParams);</script> <div class="form_bottom_text" style="color:#56575f;font-size:13px;text-align:center;">It's completely FREE</div></div><div class="rad_popup_thankyou icon icon--order-success svg"> <svg xmlns="http://www.w3.org/2000/svg"   width="148" height="148" viewBox="0 0 72 72"> <g fill="none" stroke="#1cc286" stroke-width="2"> <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle> <path d="M17.417,37.778l9.93,9.909l25.444-25.393" style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path> </g> </svg><div class="thank_you_title">Thank you.</div><div class="thank_you_text" >We'll be in touch  ASAP.<br />In the meantime, enjoy these:</div><div class="ct-bottom"><div class="ct-cta ct-cta-left"><a href="/blog/">Our Blog</a></div><div class="ct-cta ct-cta-right"><a href="/resources/">Case Studies & Videos</a></div></div></div></div></div></div></div></div></div> <script>$(document).ready(function() {
-		// Handles the RAD Form
-		MktoForms2.whenReady(function (form){
-			var formid_from_rad_popup = $("#rad_popup form").attr("id");
-			formid_from_rad_popup = formid_from_rad_popup.replace("mktoForm_","");
-			if (form.getId() == formid_from_rad_popup) {
-				form.onSuccess(function(values, followUpUrl){
-					form.getFormElem().hide();
-					$("#rad_popup .rad_popup_form").css("display","none");
-					$("#rad_popup .rad_popup_thankyou").css('display','block');
-					return false;
-				});
-			}
-		});
-
-		// Handles the on click to open RAD popup
-		$(".rad_popup_open").click(function() {
-			$("body").addClass("rad_popup_form_is_open");
-			return false;
-		});
-
-		$("#rad_popup_close").click(function() {
-			$("body").removeClass("rad_popup_form_is_open");
-			return false;
-		});
-	});</script> <style type="text/css">/* RAD POPUP */
+    }</script>
+<style>
 .rad_popup {
 	background:url("http://wwwyotpo.staging.wpengine.com/wp-content/themes/tg/images/rad_popup_bg.jpg") #1c1e2a no-repeat;
 	height:100vh;
@@ -1409,7 +1385,7 @@ body.rad_popup_form_is_open #rad_popup {
     text-align: center;
     margin-bottom: 10px;
 }
-.rad_popup_form_wrapper form div:first-of-type .mktoFormCol {
+ form div:first-of-type .mktoFormCol {
 	width:49.5% !important;
 
 }

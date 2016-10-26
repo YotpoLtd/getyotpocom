@@ -1,1 +1,1620 @@
 
+
+
+
+<!DOCTYPE html><html lang="en-US"><head>  <script>(function() {
+    var redcross = window.redcross = [];
+    if (!redcross.initialize)
+        if (redcross.invoked) window.console && console.error && console.error('Redcross snippet included twice.');
+        else {
+            redcross.invoked = !0;
+            redcross.methods = ['trackSubmit', 'trackClick', 'trackLink', 'trackForm', 'pageview', 'identify', 'reset', 'group', 'track', 'ready', 'alias', 'page', 'once', 'off', 'on'];
+            redcross.factory = function(t) {
+                return function() {
+                    var e = Array.prototype.slice.call(arguments);
+                    e.unshift(t);
+                    redcross.push(e);
+                    return redcross
+                }
+            };
+            for (var t = 0; t < redcross.methods.length; t++) {
+                var e = redcross.methods[t];
+                redcross[e] = redcross.factory(e)
+            }
+        }
+
+    var rc = document.createElement('script');
+    rc.src = 'https://er.yotpo.com/redcross/redcross.min.js';
+    rc.type = 'text/javascript';
+    rc.async = 'true';
+    rc.onload = rc.onreadystatechange = function() {
+        var redcrossq = redcross;
+        redcross = window.redcross;
+
+        window.analytics = {};
+        window.analytics.SNIPPET_VERSION='1.0.0';
+        redcross.initialize({'Segmentio': {apiKey:'BxhQOA0Cxo4wZRJqZ427DUPJPjUuAfox' }});
+        //'BxhQOA0Cxo4wZRJqZ427DUPJPjUuAfox'
+       //'a4sQfSZUpmDpvx9rLYnvbUfn6LIvHh9s'
+        while (redcrossq && redcrossq.length > 0) {
+            var args = redcrossq.shift();
+            var method = args.shift();
+            if (redcross[method]) redcross[method].apply(redcross, args);
+        }
+    };
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(rc, s);
+})();</script><script>function passUtmParams($form,ctx){var came_from = getParameterByName('came_from');
+var page_t = getParameterByName('page_title');
+var list =['display','directory','cpc','cpl','media','banners','outbound_email'];
+var s_medium = getParameterByName('s_medium') ;
+var utm_medium = getParameterByName('utm_medium') ;
+
+var utm_string = builed_utm_string();
+   if (came_from !== '') {
+    if (came_from.indexOf('_blog') != -1){
+      $form.vals({'utm_source__c':'blog','utm_medium__c':'link','utm_campaign__c':'tp-campaign - '+came_from , 'UTM_Content__c':page_t });
+    }
+    else{
+   $form.vals({'utm_source__c':'Yotpo.com','utm_medium__c':'link','utm_campaign__c':'tp-campaign - '+came_from });
+ }
+ }
+ else{
+   if (document.URL.indexOf('/blog/') != -1){
+      $form.vals({'utm_source__c':'blog','utm_medium__c':'link','utm_campaign__c':'tp-campaign' , 'UTM_Content__c':page_t });
+    }
+    else{
+      if(17366!= 4119){
+      if(document.URL.indexOf('utm_source') == -1 && document.URL.indexOf('utm_medium') == -1 && document.URL.indexOf('utm_campaign')==-1 ){
+
+      $form.vals({'utm_source__c':'Yotpo.com','utm_medium__c':'link','utm_campaign__c':'tp-campaign'});
+    }
+  }
+}
+  if(17366 == 9910){
+      $form.vals({'utm_source__c':'Yotpo.com','utm_medium__c':'link','utm_campaign__c':'No_pricing'});
+    }
+
+ }
+  if (utm_string !== '^^') {
+      $form.vals({'UTM_Term__c':utm_string});
+
+}
+
+for (i = 0; i < list.length; i++) {
+  if (s_medium.indexOf(list[i]) !== -1  || utm_medium.indexOf(list[i]) !== -1) {
+   $form.vals({'LeadSource':'Acquisition'});
+}
+}
+$form.vals({'Segment_ID__c':redcross.user().anonymousId()});
+form_prefilled_marketing($form)
+
+var prop_string='';
+$form.onSubmit(function(){
+        // Get the form field values
+        var vals = $form.vals();
+
+        var dict = {
+        url: document.URL,
+        path: location.pathname,
+        title:'tp-campaign'};
+
+        for (var key in vals) {
+          if (key !== 'munchkinId' && key !== 'formid'){
+
+              dict['formField'+key]=vals[key];
+
+            }
+
+
+        }
+        dict['marketoFormId']=vals['formid']
+        redcross.track( 'Form Submitted', dict);
+ //addroll pixal - Daniel PPC
+ try
+{
+  __adroll.record_user({'adroll_segments': 'fc19c911'})
+}
+catch(err) {}
+//this event sent for use of YOYO PPC dep
+
+        if (17366 == 10566){
+          dataLayer.push({'event': 'lead-sent'});
+        }
+
+});
+
+}
+function form_prefilled_marketing($form,ctx){
+  var fname = getParameterByName('fn');
+  var domain = getParameterByName('domain');
+  var lname = getParameterByName('ln');
+  var mail = getParameterByName('mail');
+  var phone = getParameterByName('phone');
+  $form.vals({'Email':mail,'Domain__c':domain, 'FirstName':fname,'LastName':lname,'Phone':phone});
+}
+function checkEmails($form,ctx){
+var mail = getParameterByName('mail');
+var vals = $form.vals();
+var Account_Email = vals['Email'];
+if (mail !== '') {
+  $form.vals({'Email':mail,'Account_Email__c_lead':Account_Email});
+}
+else {
+  $form.vals({'Email':Account_Email,'Account_Email__c_lead':Account_Email});
+
+}
+
+}</script> <script src="//app-lon04.marketo.com/js/forms2/js/forms2.min.js"></script> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="UTF-8"><meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no"><link type="text/css" media="all" href="http://wwwyotpo.staging.wpengine.com/wp-content/cache/autoptimize/css/autoptimize_268b6e9bbcb5f9c8b3b6415581901613.css" rel="stylesheet" /><link type="text/css" media="screen" href="http://wwwyotpo.staging.wpengine.com/wp-content/cache/autoptimize/css/autoptimize_202ce80fde1c3e1dd87edd71681c9b7e.css" rel="stylesheet" /><title>Yotpo &#8211; Customer Content Marketing Solution</title><link rel="shortcut icon" href="http://wwwyotpo.staging.wpengine.com/wp-content/themes/tg/images/favicon.ico" type="image/x-icon"/><link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300,800' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300,700' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ <script type='text/javascript'>var _vis_opt_account_id = 200644;
+var _vis_opt_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://');
+document.write('<s' + 'cript src="' + _vis_opt_protocol +
+'dev.visualwebsiteoptimizer.com/deploy/js_visitor_settings.php?v=1&a='+_vis_opt_account_id+'&url='
++encodeURIComponent(document.URL)+'&random='+Math.random()+'" type="text/javascript">' + '<\/s' + 'cript>');</script> <script type='text/javascript'>if(typeof(_vis_opt_settings_loaded) == "boolean") { document.write('<s' + 'cript src="' + _vis_opt_protocol +
+'d5phz18u4wuww.cloudfront.net/vis_opt.js" type="text/javascript">' + '<\/s' + 'cript>'); }
+// if your site already has jQuery 1.4.2, replace vis_opt.js with vis_opt_no_jquery.js above</script> <script type='text/javascript'>if(typeof(_vis_opt_settings_loaded) == "boolean" && typeof(_vis_opt_top_initialize) == "function") {
+        _vis_opt_top_initialize(); vwo_$(document).ready(function() { _vis_opt_bottom_initialize(); });
+}</script>  <script type="text/javascript">$.ajax({
+  url: '//munchkin.marketo.net/munchkin.js',
+  dataType: 'script',
+  cache: true,
+  success: function() {
+    Munchkin.init('828-GCW-581');
+  }
+});</script>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><script>$(function() {
+	  $("a[href*='#']:not([href='#login_popup'],[href='#signup_popup'],[href^='#popup'])").click(function() {
+	    if (location.pathname.replace(/^\//,"") == this.pathname.replace(/^\//,"") && location.hostname == this.hostname) {
+	      var target = $(this.hash);
+	      target = target.length ? target : $('[name=" + this.hash.slice(1) +"]');
+	      if ( (target.length) && ($(this).attr("href") !== "#rad_popup_open") ) {
+	        $("html,body").animate({
+	          scrollTop: target.offset().top
+	        }, 1500);
+	        return false;
+	      }
+	    }
+	  });
+	});</script> <script type="text/javascript" src="http://wwwyotpo.staging.wpengine.com/wp-content/cache/autoptimize/js/autoptimize_8716bc2457f4143ba060ff935ce5d6b6.js"></script></head><body class="page page-id-17366 page-template page-template-lp-template page-template-lp-template-php logged-in admin-bar no-customize-support"  style="background-color: transparent;"> <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TQBMK4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TQBMK4');</script> </div><section class="wrapper-site" style="background-color: transparent; "><section id="wrapper-content" class="wrapper-content"><style>.sticky_logo_botton a.button.btn-large-top {
+    font-size: 14px !important;
+    background: #FFFFFF !important;
+    border: 1px solid #fec600 !important;
+text-decoration:none;
+}
+.sticky_logo_botton a.button.btn-large-top:hover {
+    background: #fec600 !important;
+}
+
+.sticky_logo_botton .top_logo{
+	width: 50px;
+    height: 51px;
+    margin-top: 14px;}
+
+    .sticky_logo_botton .container {
+    max-width: inherit;
+}
+.sticky_logo_botton a.button.btn-large-top {
+ font-size: 14px !important;
+    background: #fec600;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    font-weight: 600;
+    float: right;
+            margin-top: 23px;
+    }
+    @media screen and (max-width: 960px){
+    .sticky_logo_botton .span-6{display: none;}
+    .sticky_logo_botton .span-3{clear: none !important;}
+
+}</style><section class="sticky_logo_botton " id="" style="background-color:#ffffff;"><div class="row container"><div class=" column span-3 " style="float: left;"><div class="top_logo"><a href="/"><img src="logo.png"></a></div></div><div class=" column span-6"></div><div class=" column span-3"  style="float: right;"><div class="lp_popup"> <a href="#s_7" class="button btn-large-top  ">Schedule a FREE demo</a></div></div></div> <script type="text/javascript">$(function(){
+        var stickyRibbonTop = $('.sticky_logo_botton').offset().top;
+
+        $(window).scroll(function(){
+                if( $(window).scrollTop() > stickyRibbonTop ) {
+                        $('.sticky_logo_botton').css({position: 'fixed', top: '0px',width: '100%','z-index': '999','border-bottom': '1px solid #e3e3e3'});
+                } else {
+                        $('.sticky_logo_botton').css({position: 'static', top: '0px',width: '100%','z-index': '999','border-bottom': '1px solid #e3e3e3'});
+                }
+        });
+});</script> </section><style>@media screen and (min-width:1610px) {
+#s_1 .ir-right-col {
+    margin-bottom: 0px !important;
+    margin-top: 61px !important;
+}
+#s_1 .ir-left-col {
+    top: 53%;
+    left: -58px;
+}
+#s_1  .ir-right-col img {
+   max-width: 100%;
+}
+#s_1{height: 793px;}
+}
+#s_1 .ir-left-col {animation-name: fadeIn;    animation-duration: 1s;}
+#s_1 .ir-right-col {
+    margin-bottom: 0px !important;
+    margin-top: -133px !important;}
+
+.top_text{
+font-family:'Roboto Slab';
+color:  #ffffff;
+font-size: 55px;
+font-weight: 300;
+text-align: left;
+}
+
+hr{border-top:0px !important;}
+.bottom_text{
+font-family: 'Roboto Slab';
+color:  #ffffff;
+font-size: 45px;
+font-weight: 700;
+text-align: left;
+}
+.reg_text{
+font-family: 'Open Sans';
+color:  #fcfcfc;
+font-size: 22px;
+font-weight: 400;
+text-align: left;
+}
+
+ #s_1 .ir-left-col {
+    max-width: 61%;
+}
+ #s_1 .ir-right-col {
+        margin-right: -505px;
+
+}
+#s_1 .ir-left-col .ir-cta a {
+    padding: 12px 75px;
+}
+#s_1 .ir-right-col img{
+ padding-bottom: 0px !important;
+
+}
+
+@media screen and (max-width:1600px) and (min-width:1450px){
+#s_1 .ir-left-col {
+    max-width: 61%;
+    left: -57px;
+}
+}
+@media screen and (max-width:1440px) and (min-width:1300px){
+#s_1 .ir-left-col {
+    max-width: 46%;
+}
+}
+
+@media screen and (max-width:1024px) and (min-width:730px){
+#top_menu li a {
+    padding: 30px 1px;
+}
+#top_menu {
+    width: 50% !important;
+}
+ #s_1 .ir-right-col img{
+ padding-bottom: 0px !important;
+
+}
+ #s_1 .ir-right-col {
+    margin-right: -112px !important;
+
+}
+ #s_1 .ir-left-col {
+    left: 0px !important;
+    margin-top: 84px;
+position: absolute;
+}
+ #s_1 .ir-right-col {
+    margin-right: -112px !important;
+}
+
+.top_text{
+font-size: 45px;
+}
+
+.bottom_text{
+font-size: 40px;
+
+}
+.reg_text{
+font-size: 18px;
+}
+
+#s_1 .ir-left-col {
+    max-width: 45%;
+}
+
+.image-right-section .ir-right-col {
+    max-width: 70%;
+}
+}
+@media screen and (max-width:960px) and (min-width:840px){
+#s_1 .ir-left-col {
+     max-width: 48%;
+    left: -18px !important;
+    margin-top: 43px;
+}
+}
+
+@media screen and (max-width:1280px) and (min-width:961px){
+.image-right-section .ir-right-col img {
+    max-width: 610px;
+}
+ #s_1 .ir-right-col {
+    margin-right: -62px !important;
+}
+.top_text{
+font-size: 45px;
+}
+
+.bottom_text{
+font-size: 40px;
+
+}
+.reg_text{
+font-size: 18px;
+}
+ #s_1 .ir-left-col{
+left:32px;
+}
+ #s_1 .ir-right-col {
+    max-width: 70%;
+}
+}
+@media screen and (max-width:1440px) and (min-width:1281px){
+
+ #s_1 .ir-right-col {
+    margin-right: -142px !important;
+}
+}
+@media screen and (max-width:1600px) and (min-width:1441px){
+ #s_1 .ir-right-col {
+    margin-right: -222px !important;
+}
+}
+@media screen and (max-width:720px) and (min-width:480px){
+#s_1 .ir-right-col {
+    margin-right: -15px !important;
+}
+ #s_1 .ir-left-col {
+    max-width: 100%;
+}
+}
+@media screen and (max-width: 480px){
+ #s_1  {
+    padding-bottom: 342px !important;
+}
+ #s_1 .ir-left-col {
+    max-width: 100%;
+}
+.top_text{
+font-size: 45px;
+}
+
+.bottom_text{
+font-size: 35px;
+}
+.reg_text{
+font-size: 18px;
+}
+}
+@media screen and (max-width: 360px){
+#s_1 {
+    padding-bottom: 299px !important;
+}
+}
+@media screen and (max-width: 600px){
+#s_1 hr{
+margin-left: auto;
+    margin-right: auto;}
+
+#s_1 .ir-left-col {
+    text-align: center;
+padding:10px;
+}
+}</style><section class="image-right-section clearfix  animated " id="s_1" style="background-color:#2c2f3d;"><div class="row container" ><div class="ir-left-col fadeIn animated" style="color: !important ;"><h3 class="heading" style="color: !important;"><h1><span class="top_text">Looking for an</span><br /> <span class="bottom_text">alternative to Trustpilot?</span><br /><h1></h3><hr/><p><span class="reg_text">You’ve come to the right place.<br />There’s a better way to get reviews for your business.</span></p><div class="ir-cta  "><a href="#s_2">Find Out How <img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/06/Arrow.png" alt="Arrow" width="9" height="5" class="alignnone size-full wp-image-11135" style="margin-left:10px;" /></a></div></div><div class="ir-right-col"> <img id="img1" src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Header-image.png" class="animated wow fadeInRight"/></div></div></section><style>#s_2 .top_text{
+font-family:'Roboto Slab';
+color:  #56575f;
+font-size: 34px;
+font-weight: 300;
+text-align: left;
+}
+
+#s_2 .bottom_text{
+font-family: 'Roboto Slab';
+color:  #56575f;
+font-size: 44px;
+font-weight: 700;
+text-align: left;
+}
+
+#s_2 .reg_text{
+color:  #6b6d77;
+font-size: 16px;
+font-weight: 300;
+text-align: left;
+}
+#s_2 a {
+    display: none;
+}
+
+
+ #s_2 .ir-left-col{
+left: 60px;
+padding-left: 20px;
+
+}
+ #s_2 .ir-left-col {
+    max-width: 41%;
+}
+#s_2 .row  {
+    margin-left: 355px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+#s_2 .icons {
+    left: -109px !important;
+    vertical-align: left;
+    position: absolute;
+    top: 13px;
+}
+@media screen and (min-width:1024px) {
+ #s_2 .ir-right-col{
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+}
+@media screen and (max-width:1024px) {
+
+#s_2 .icons img {
+    max-width: 60%;
+}
+#s_2 .row {
+    margin-left: 100px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+ #s_2 .ir-right-col {
+    margin-right: 290px !important;
+
+}
+ #s_2 .ir-left-col {
+    left: 60px;
+    padding-left: 20px;
+    top: 40px;
+}
+#s_2 .icons {
+    left: -104px !important;
+}
+#s_2 .ir-left-col {
+    max-width: 90%;
+}
+}
+
+
+@media screen and (max-width:1600px) and (min-width:1300px){
+#s_2 .top_text{
+font-size: 30px;
+}
+#s_2 .ir-right-col {
+    margin-right: -65px;
+}
+#s_2 .bottom_text{
+font-size: 30px;
+}
+
+#s_2 .row {
+    margin-left: 200px !important ;
+}
+
+. #s_2 .ir-left-col {
+    max-width: 46%;
+}
+}
+
+@media screen and (max-width:1280px) and (min-width:970px){
+#s_2 .row {
+    margin-left: 150px !important ;
+}
+#s_2 .ir-right-col {
+    margin-right: 200px;
+}
+
+ }
+
+@media screen and (max-width:600px){
+#s_2 .icons img {display:none;}
+#s_2 .row {
+    margin-left: 0px !important;
+    border-left: none;
+}
+#s_2 .ir-right-col {
+    margin-right: 0px !important;
+}
+#s_2 .ir-left-col {
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    padding: 10px;
+    left: initial;
+}
+#s_2 hr{    margin-left: auto;
+    margin-right: auto;}
+}
+
+@media screen and (max-width:480px){
+#s_2 .top_text {    font-size: 22px;}
+#s_2 .bottom_text {
+    font-size: 30px;}
+#s_2{
+    padding-bottom: 700px !important;
+}
+
+
+
+
+
+}</style><section class="image-right-section clearfix  animated " id="s_2" style="background-color:#ffffff;"><div class="row container" ><div class="ir-left-col fadeIn animated" style="color: !important ;"><h3 class="heading" style="color: !important;"><h2><span class="top_text">Own your reviews,</span><br /> <span class="bottom_text">boost your SEO.</span></h2><div class="icons"><img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Seo-icon.png" alt="Seo-icon" width="96" height="96" class="alignnone size-full wp-image-9248" /></div></h3><hr/><p><span class="reg_text">When your reviews live on another site, you lose tons of organic search traffic. If you’re like most businesses, you depend on this organic traffic to meet your goals.</span></p><div class="ir-cta  "><a href="/">/</a></div></div><div class="ir-right-col"> <img id="img1" src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/SEO-2.png" class="animated wow fadeInRight"/></div></div></section><style>.image-right-section {
+    padding-bottom: 0px;
+}
+#s_3 .top_text{
+font-family:'Roboto Slab';
+color:  #56575f;
+font-size: 34px;
+font-weight: 300;
+text-align: left;
+}
+
+#s_3 .bottom_text{
+font-family: 'Roboto Slab';
+color:  #56575f;
+font-size: 44px;
+font-weight: 700;
+text-align: left;
+}
+#s_3 .reg_text{
+color:  #6b6d77;
+font-size: 16px;
+font-weight: 300;
+text-align: left;
+}
+#s_3 a {
+    display: none;
+}
+ #s_3 .ir-right-col{
+    margin-right: -155px;
+}
+ #s_3 .ir-left-col{
+left: 60px;
+    padding-left: 20px;
+
+}
+
+ #s_3 .ir-left-col {
+    max-width: 43%;
+}
+#s_3 .row {
+    margin-left: 355px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+#s_3 .icons {
+    left: -109px !important;
+    vertical-align: left;
+    position: absolute;
+    top: 13px;
+}
+@media screen and (min-width:1024px) {
+ #s_3 .ir-right-col{
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+}
+
+@media screen and (max-width:1024px) {
+
+#s_3 .icons img {
+    max-width: 60%;
+}
+#s_3 .row {
+    margin-left: 100px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+ #s_3 .ir-right-col {
+    margin-right: 133px !important;
+
+}
+ #s_3 .ir-left-col {
+    left: 60px;
+    padding-left: 20px;
+    top: 40px;
+}
+#s_3 .icons {
+    left: -104px !important;
+}
+#s_3 .ir-left-col {
+    max-width: 90%;
+}
+}
+
+
+@media screen and (max-width:1600px) and (min-width:1300px){
+#s_3 .top_text{
+font-size: 30px;
+}
+
+#s_3 .bottom_text{
+font-size: 30px;
+}
+
+#s_3 .row {
+    margin-left: 200px !important ;
+}
+ #s_3 .ir-right-col{
+    margin-right: -65px;
+}
+ #s_3 .ir-left-col {
+    max-width: 41%;
+}
+}
+
+@media screen and (max-width:1280px) and (min-width:970px){
+#s_3 .row {
+    margin-left: 150px !important ;
+}
+#s_3 .ir-right-col {
+    margin-right: -24px;
+}
+.image-right-section .ir-right-col img {
+    max-width: 578px;
+}
+}
+@media screen and (max-width:600px){
+#s_3 .icons img {display:none;}
+#s_3 .row {
+    margin-left: 0px !important;
+    border-left: none;
+}
+#s_3 .ir-right-col {
+    margin-right: 0px !important;
+}
+}
+@media screen and (max-width:600px){
+#s_3 .icons img {display:none;}
+#s_3 .row {
+    margin-left: 0px !important;
+    border-left: none;
+}
+#s_3 .ir-right-col {
+    margin-right: 0px !important;
+}
+#s_3 .ir-left-col {
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    padding: 10px;
+    left: initial;
+}
+#s_3 hr{    margin-left: auto;
+    margin-right: auto;}
+}
+
+@media screen and (max-width:480px){
+#s_3 .top_text {    font-size: 22px;}
+#s_3 .bottom_text {
+    font-size: 30px;}
+#s_3{
+    padding-bottom: 400px !important;
+}
+}</style><section class="image-right-section clearfix  animated " id="s_3" style="background-color:#ffffff;"><div class="row container" ><div class="ir-left-col fadeIn animated" style="color: !important ;"><h3 class="heading" style="color: !important;"><h2><span class="top_text">Moderate your reviews,</span><br /> <span class="bottom_text">control your reputation.</h2><div class="icons"><img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/06/graph-1.png" alt="graph" width="96" height="96" class="alignnone size-full wp-image-12195" /></div></h3><hr/><p><span class="reg_text">With Yotpo, you control your reviews. You can easily remove fake reviews, respond to negative ones and promote the best ones on social networks.</span></p><div class="ir-cta  "><a href="/">/</a></div></div><div class="ir-right-col"> <img id="img1" src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Moderation.png" class="animated wow fadeInRight"/></div></div></section><style>#s_4 .top_text{
+font-family:'Roboto Slab';
+color:  #56575f;
+font-size: 34px;
+font-weight: 300;
+text-align: left;
+}
+
+#s_4 .bottom_text{
+font-family: 'Roboto Slab';
+color:  #56575f;
+font-size: 44px;
+font-weight: 700;
+text-align: left;
+}
+#s_4 .reg_text{
+color:  #6b6d77;
+font-size: 16px;
+font-weight: 300;
+text-align: left;
+}
+#s_4 a {
+    display: none;
+}
+.image-right-section #s_4 .ir-right-col{
+    margin-right: -155px;
+}
+ #s_4 .ir-left-col{
+left: 60px;
+    padding-left: 20px;
+
+}
+
+ #s_4 .ir-left-col {
+    max-width: 42%;
+}
+#s_4 .row {
+    margin-left: 355px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+#s_4 .icons {
+    left: -109px !important;
+    vertical-align: left;
+    position: absolute;
+    top: 13px;
+}
+@media screen and (min-width:1024px) {
+ #s_4 .ir-right-col{
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+}
+@media screen and (max-width:1024px){
+
+#s_4 .icons img {
+    max-width: 60%;
+}
+#s_4 .row{
+    margin-left: 100px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+#s_4 .ir-right-col {
+    margin-right: 179px !important;
+
+}
+ #s_4 .ir-left-col {
+    left: 60px;
+    padding-left: 20px;
+    top: 40px;
+}
+#s_4 .icons {
+    left: -104px !important;
+}
+#s_4 .ir-left-col {
+    max-width: 90%;
+}
+}
+
+
+
+@media screen and (max-width:1600px) and (min-width:1300px){
+#s_4 .top_text{
+font-size: 30px;
+}
+
+#s_4 .bottom_text{
+font-size: 30px;
+}
+
+#s_4  .row{
+    margin-left: 200px !important ;
+}
+ #s_4 .ir-right-col{
+    margin-right: -65px;
+}
+ #s_4 .ir-left-col {
+    max-width: 41%;
+}
+}
+
+
+
+@media screen and (max-width:1280px) and (min-width:970px){
+#s_4 .row {
+    margin-left: 150px !important ;
+}
+#s_4 .ir-right-col {
+    margin-right: -24px;
+}
+.image-right-section .ir-right-col img {
+    max-width: 578px;
+}
+ }
+
+
+@media screen and (max-width:600px){
+#s_4 .icons img {display:none;}
+#s_4 .row {
+    margin-left: 0px !important;
+    border-left: none;
+}
+#s_4 .ir-right-col {
+    margin-right: 0px !important;
+}
+#s_4 .ir-left-col {
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    padding: 10px;
+    left: initial;
+}
+#s_4 hr{    margin-left: auto;
+    margin-right: auto;}
+}
+
+@media screen and (max-width:480px){
+#s_4 .top_text {    font-size: 22px;}
+#s_4 .bottom_text {
+    font-size: 30px;}
+#s_4{
+    padding-bottom: 400px !important;
+}
+}</style><section class="image-right-section clearfix  animated " id="s_4" style="background-color:#ffffff;"><div class="row container" ><div class="ir-left-col fadeIn animated" style="color: !important ;"><h3 class="heading" style="color: !important;"><h2><span class="top_text">Collect photos with</span><br /> <span class="bottom_text">your reviews.</span></h2><div class="icons"><img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Photos-icon.png" alt="Photos-icon" width="96" height="96" class="alignnone size-full wp-image-9244" /></div></h3><hr/><p><span class="reg_text">Customers can include photos in their reviews, thereby enhancing your site with rich user-generated content. Plus, research shows that shoppers prefer real photos from real buyers.</span></p><div class="ir-cta  "><a href="/">/</a></div></div><div class="ir-right-col"> <img id="img1" src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Pictures.png" class="animated wow fadeInRight"/></div></div></section><style>#s_5 .top_text{
+font-family:'Roboto Slab';
+color:  #56575f;
+font-size: 34px;
+font-weight: 300;
+text-align: left;
+}
+
+#s_5 .bottom_text{
+font-family: 'Roboto Slab';
+color:  #56575f;
+font-size: 44px;
+font-weight: 700;
+text-align: left;
+}
+#s_5 .reg_text{
+color:  #6b6d77;
+font-size: 16px;
+font-weight: 300;
+text-align: left;
+}
+#s_5 a {
+    display: none;
+}
+#s_5 .ir-right-col{
+    margin-right: -155px;
+}
+ #s_5 .ir-left-col{
+left: 60px;
+    padding-left: 20px;
+
+}
+
+ #s_5 .ir-left-col {
+    max-width: 42%;
+}
+#s_5 .row {
+    margin-left: 355px !important;
+    border-left: 1px dashed #b5b8d1;
+
+}
+#s_5 .icons {
+    left: -109px !important;
+    vertical-align: left;
+    position: absolute;
+    top: 13px;
+}
+@media screen and (min-width:1024px) {
+ #s_5 .ir-right-col{
+    margin-bottom: 200px;
+    margin-top: 100px;
+}
+}
+@media screen and (max-width:1024px) {
+
+#s_5 .icons img {
+    max-width: 60%;
+}
+#s_5  .row{
+    margin-left: 100px !important;
+    border-left: 1px dashed #b5b8d1;
+}
+#s_5 .ir-right-col {
+    margin-right: 195px !important;
+
+}
+ #s_5 .ir-left-col {
+    left: 60px;
+    padding-left: 20px;
+    top: 40px;
+}
+#s_5 .icons {
+    left: -104px !important;
+}
+#s_5 .ir-left-col {
+    max-width: 90%;
+}
+}
+
+
+@media screen and (max-width:1600px) and (min-width:1300px){
+#s_5 .top_text{
+font-size: 30px;
+}
+
+#s_5 .bottom_text{
+font-size: 30px;
+}
+
+#s_5 .row {
+    margin-left: 200px !important ;
+}
+ #s_5 .ir-right-col{
+    margin-right: -65px;
+}
+ #s_5 .ir-left-col {
+    max-width: 42%;
+}
+}
+
+
+@media screen and (max-width:1280px) and (min-width:970px){
+#s_5 .row {
+    margin-left: 150px !important ;
+}
+#s_5 .ir-right-col {
+    margin-right: -24px;
+}
+.image-right-section .ir-right-col img {
+    max-width: 578px;
+}
+ }
+@media screen and (max-width:600px){
+#s_5 .icons img {display:none;}
+#s_5 .row {
+    margin-left: 0px !important;
+    border-left: none;
+}
+#s_5 .ir-right-col {
+    margin-right: 0px !important;
+}
+#s_5 .ir-left-col {
+    max-width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    padding: 10px;
+    left: initial;
+}
+#s_5 hr{    margin-left: auto;
+    margin-right: auto;}
+}
+
+@media screen and (max-width:480px){
+#s_5 .top_text {    font-size: 22px;}
+#s_5 .bottom_text {
+    font-size: 30px;}
+#s_5{
+    padding-bottom: 300px !important;
+}
+}</style><section class="image-right-section clearfix  animated " id="s_5" style="background-color:#ffffff;"><div class="row container" ><div class="ir-left-col fadeIn animated" style="color: !important ;"><h3 class="heading" style="color: !important;"><h2><span class="top_text">Start a conversation</span><br /> <span class="bottom_text">with your visitors.</span></h2><div class="icons"><img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/QA-icon.png" alt="Q&amp;A-icon" width="96" height="96" class="alignnone size-full wp-image-9246" /></div></h3><hr/><p><span class="reg_text">The main reason your visitors don’t convert is because they have unanswered questions. Let them ask questions on your site and get answers from your experts or past buyers.</span></p><div class="ir-cta  "><a href="/">/</a></div></div><div class="ir-right-col"> <img id="img1" src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/QA.png" class="animated wow fadeInRight"/></div></div></section><style>.three-cols-images .column .media-image img {
+    height: 88px;
+    width: auto;
+}
+h5.heading{
+font-family: 'Open Sans';
+color:  #56575f !important;
+font-size: 24px;
+font-weight: 700;
+text-align: center;
+}
+#s_6 p{
+font-family: 'Open Sans';
+color:  #676a6c;
+font-size: 14px;
+font-weight: 300;
+text-align: center;
+}
+#s_6 .top_text{
+font-family: 'Roboto Slab';
+color:  #56575f;
+font-size: 34px;
+font-weight: 300;
+text-align: center;
+}
+
+#s_6 .bottom_text{
+font-family: 'Roboto Slab';
+color:  #56575f;
+font-size: 44px;
+font-weight: 700;
+text-align: center;
+
+}
+@media screen and  (min-width:960px){
+#s_6 .bottom_text{
+    line-height: 87px;
+}
+}
+
+@media screen and  (max-width:600px){
+#s_6 .top_text{
+font-size: 24px;
+}
+
+#s_6 .bottom_text{
+font-size: 24px;
+}
+}
+
+#s_6 hr{
+background-color:  rgba(198, 198, 198, 0.5);
+width: 51px;
+height: 5px;
+    margin: 15px auto;
+}</style><section class="widget row content-vertical-massive three-cols-images " id="s_6"   style="background-color:#f8f8f8;"><div class="container clearfix"><div class="section-title clearfix medium text-center invert"><h3 class="heading"><h2><span class="top_text">Here’s why Yotpo is</span><br /> <span class="bottom_text">the best PowerReviews alternative:</span></h2></h3></div></div><div class="row container list-grid"><div id="layers-widget-column-6-971" class="layers-masonry-column layers-widget-column-971 span-4 icon_2 column has-image wow slideInLeft"><div class="media invert image-top medium"><div class="media-image"> <img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Vector-Smart-Object-2.png" class="attachment-full" alt="icon1"></div><div class="media-body text-center"><h5 class="heading">Organic Traffic & SEO<hr></h5><div class="excerpt"><p>Because your content lives on <br/>Trustpilot.com, they get all the SEO benefits <br/>of your reviews.</p></div></div></div></div><div id="layers-widget-column-6-971" class="layers-masonry-column layers-widget-column-971 span-4 icon_3 column has-image wow "><div class="media invert image-top medium"><div class="media-image"> <img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Vector-Smart-Object-3.png" class="attachment-full" alt="icon1"></div><div class="media-body text-center"><h5 class="heading">Moderation & Control<hr></h5><div class="excerpt"><p>Don’t put your brand’s reputation in someone <br/>else’s hands. Stay in control.</p></div></div></div></div><div id="layers-widget-column-6-971" class="layers-masonry-column layers-widget-column-971 span-4 icon_4 column has-image wow slideInRight"><div class="media invert image-top medium"><div class="media-image"> <img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/03/Vector-Smart-Object.png" class="attachment-full" alt="icon1"></div><div class="media-body text-center"><h5 class="heading">Photos and Q&A<hr></h5><div class="excerpt"><p>Reviews are just the beginning. Yotpo has tons<br/> of tools that help you sell more.</p></div></div></div></div></div></section> <script>$( document ).ready(function() {
+MktoForms2.whenReady(function (form){
+  form.onSuccess(function(values, followUpUrl){
+   form.getFormElem().hide();
+    var text = document.getElementById("form_container");
+    text.style.display="none";
+   $(".icon").css('display','block');
+   return false;
+ });
+});
+});</script> <style>@media screen and (min-width:1600px){
+.form_title {
+    max-width: 826px;
+}}
+
+
+#video_container {
+border-top: none;
+}
+#s_7 .top_text{
+font-family:'Roboto Slab';
+color:  #ffffff;
+font-size: 35px;
+font-weight: 300;
+text-align: center;
+}
+
+#s_7 .bottom_text{
+font-family: 'Roboto Slab';
+color:  #ffffff;
+font-size: 39px;
+font-weight: 700;
+text-align: center;
+}
+#s_7 .reg_text{
+font-family: 'Open Sans';
+color:  #9ea6b9;
+font-size: 18px;
+font-weight: 300;
+line-height: 26px;
+text-align: center;
+}
+
+.header4 #video_container .container{
+top:0px !important;
+    height: inherit !important;
+
+}
+.header4 #video_container {
+    height: inherit !important;
+}
+
+.mktoForm input[type=text], .mktoForm input[type=url], .mktoForm input[type=email], .mktoForm input[type=tel], .mktoForm input[type=number], .mktoForm input[type=date], .mktoForm textarea.mktoField, .mktoForm select.mktoField {
+    height: 45px !important;
+}
+.mktoForm .mktoLabel, .mktoForm label {display:none !important;}
+@media screen and  (max-width:600px){
+#s_7 .top_text{
+font-size: 24px;
+}
+
+#s_7 .bottom_text{
+font-size: 24px;
+}
+.header4 .logo {
+    float: left;
+    margin-left: 0px !important;
+     margin-right: 0px !important;
+}
+.header4 .mktoForm {
+    margin-top: -75px;
+}
+}
+.pagescroll.container-fluid.height100mobile {
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+#footer {display:none;}
+.yotpoLogo {
+    display: none;
+}
+
+#s_8 .column.span-6 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.aboutUs .aboutUs_text {
+    text-align: center;
+    margin-bottom: 0px;
+}
+.icon {
+   padding-top: 1% !important;
+}</style><section class="widget row content-vertical-massive header4" id="s_7" style = "position:relative; background: #2c2f3d "><div class="pagescroll container-fluid height100mobile" style="    background-repeat: no-repeat;"><div class="home_video col-md-12 nopadding"><div id="video_container" style="align:center;     z-index: 99;"><div class="logo"></div><div class="form_title"><h2><h2><span class="top_text">Find out more about why</span><br /> <span class="bottom_text">Yotpo is the best Trustpilot alternative.</span></h2></h2><div class="video_text"><p><span class="reg_text">Schedule a<span style="color:#FFFFFF;"> free demo</span> today.</span></p></div></div><div class="container" ><div class="text"><div class="video_content"><div id="form_container"  class="fadeIn animated"  style="animation-delay:1.5s ; "> <script src="//app-lon04.marketo.com/js/forms2/js/forms2.min.js"></script> <form id="mktoForm_1338"></form> <script>MktoForms2.loadForm("//app-lon04.marketo.com", "828-GCW-581", '1338',passUtmParams);</script> <div id="form_botom_text" style="color:#56575f;font-size:13px;text-align:center;">It’s completely FREE</div></div><div class="icon icon--order-success svg"> <svg xmlns="http://www.w3.org/2000/svg"   width="148" height="148" viewBox="0 0 72 72"> <g fill="none" stroke="#1cc286" stroke-width="2"> <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle> <path d="M17.417,37.778l9.93,9.909l25.444-25.393" style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path> </g> </svg><div class="thank_you_title">Thank you.</div><div class="thank_you_text" >We'll be in touch  ASAP.<br/> In the meantime, enjoy these:</div><div class="ct-bottom animated wow fadeInUp"><div class="ct-cta ct-cta-left"><a href="https://www.yotpo.com/blog/?utm_source=oubound_email&utm_medium=power_reviews_outbound&utm_campaign=pr_thank_you" class="animated wow fadeInUp">Our Blog</a></div><div class="ct-cta ct-cta-right"><a href="https://www.yotpo.com/resources/?utm_source=oubound_email&utm_medium=power_reviews_outbound&utm_campaign=pr_thank_you" class="animated wow fadeInUp">Case Studies & Videos</a></div></div></div></div></div></div></div><div class = "video_overlay" style="position: absolute; background: #2c2f3d none repeat scroll 0% 0%; width: 100%; top:0; color: rgb(255, 255, 255);    z-index: 9;"></div><div style="clear:both;"></div></div></div></section><section class="aboutUs  " id="s_8" style="background-color:#232631;"><div class="row container"><div class="text column span-6 "><h3 class="aboutUs_title"></h3><div class="aboutUs_text"><p><span style="font-family: Open Sans;
+color:  #b6b6b6;
+font-size: 18px;
+font-weight: 300;
+text-align: left;padding:bottom:10px;">Brought to you by<br /> </span><br /> <img src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2015/08/Logo_65x65.png" alt="Logo_65x65" width="45" height="45" class="alignnone size-full wp-image-2083" /></p></div></div><div class="  column span-3 "></div><div class=" yotpoLogo column span-3 "> <img src="logo.png" style=""/><div class="yotpo_contact"> © Yotpo <br/> +1 (646) 977-7959</div></div></div></section><div id="back-to-top"> <a href="http://localhost/layers/#top">Back to top</a></div></section><footer id="footer" class="footer-site invert"><div class="container  clearfix"><div class="row"><div class="column col-xs-12 "><div class="column col-xs-3 "> <img class="alignnone size-full wp-image-38" src="https://www.yotpo.com/wp-content/themes/tg/yotpo/landing_page_assets/logo.png" alt="logo" style="margin-right:10px;vertical-align:middle;" width="29" height="29"> &copy;YOTPO</div><div class="column col-xs-3 remove_on_mobile"></div><div class="column col-xs-3 remove_on_mobile"></div><div class="column col-xs-3 last"> <a href="https://plus.google.com/b/100850542490341505903/100850542490341505903/posts" class="footer_social_icon footer_google"></a> <a href="https://www.linkedin.com/company/yotpo" class="footer_social_icon footer_linkdin"></a> <a href="http://www.twitter.com/yotpo" class="footer_social_icon footer_twitter"></a> <a href="https://www.facebook.com/yotpo" class="footer_social_icon footer_facebook"></a></div></div></div></div></footer></section><div id="login_popup"> <a class="popup_logo"></a><div class="popup_header"><span>LOG IN</span></div><div class="popup_body"><div class="popup_login_left"><form accept-charset="UTF-8" action="https://my.yotpo.com/my_login" method="get"><div class="popup_login_input_holder"> <input type="text" name="user_email" id="user_email" placeholder="Email Address" /> <span class="email_icon"></span></div><div class="popup_login_input_holder"> <input type="password" name="user_password" id="user_password" placeholder="Password" /> <span class="password_security_icon"></span></div> <input type="submit" value="LOG IN" class="popup_login_submit" /></form> <span class="signup_from_login forgot_your_password">Forgot your password?<a href="https://my.yotpo.com/login?forgot_password=true">Click Here</a></span></div><div class="popup_login_right"> <a href="http://wwwyotpo.staging.wpengine.com/blog/yotpo-sweet-tooth-integration/" target="_blank"><span class="popup_login_post_title">Use Customer Reviews to Grow Loyalty: New Integration with Sweet Tooth</span></a> <a href="http://wwwyotpo.staging.wpengine.com/blog/yotpo-sweet-tooth-integration/" target="_blank"><img width="300" height="146" src="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/10/Aimee-300x146.png" class="attachment-medium size-medium wp-post-image" alt="aimee" srcset="http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/10/Aimee-300x146.png 300w, http://wwwyotpo.staging.wpengine.com/wp-content/uploads/2016/10/Aimee.png 680w" sizes="(max-width: 300px) 100vw, 300px" /></a> <a href="http://wwwyotpo.staging.wpengine.com/blog/yotpo-sweet-tooth-integration/" class="popup_login_post_link" target="_blank">Read now</a></div></div> <span class="signup_from_login signup_from_login_register various">No account? <a href="#signup_popup">Sign Up</a></span></div><div id="signup_popup"> <a class="popup_logo"></a><div class="popup_header"><span>Start getting reviews</span></div><div class="popup_body"><form accept-charset="UTF-8" action="https://my.yotpo.com/register" method="post"><div style="margin:0;padding:0;display:inline"> <input name="utf8" type="hidden" value="✓"> <input name="authenticity_token" type="hidden" value="KlcMVLrIumAfXUaojmK+AqCOqA1lkge8UJa8qqY7feI="> <input name="not_finished_registration" type="hidden" value="true"></div> <label>Name *</label> <input type="text" name="name" /> <label>Email *</label> <input type="text" name="email" /> <label>Password *</label> <input type="password" name="password" /> <span class="terms_and_conditions">By signing up, you are agreeing to the <a href="https://www.yotpo.com/terms-of-service/?utm_source=yotpo.com&utm_medium=link&utm_campaign=TOS_firstStep" target="_blank">Terms of Service</a></span> <input type="submit" value="LET'S START" /></form><div class="signup_popup_footer"><div class="signup_phone">Call: +1 (646) 977-7959</div> <a href="https://www.yotpo.com/request-a-demo/?came_from=sign_up_pop_up" class="signup_request_demo">Request a Demo</a></div><div class="signup_popup_login various_big"> Already have an account? <a href="#login_popup">Log in</a></div></div></div> <script>function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+function builed_utm_string() {
+  var qury_string = "" ;
+  var s_source = getParameterByName('s_source') ;
+  qury_string = qury_string + s_source ;
+
+  var s_medium = getParameterByName('s_medium') ;
+  qury_string = qury_string + "^" + s_medium ;
+
+  var s_campaign = getParameterByName('s_campaign') ;
+  qury_string = qury_string + "^" + s_campaign ;
+return  qury_string ;
+}</script> <script>var qury_string = "" ;
+
+  var s_source = getParameterByName('utm_source') ;
+  if (s_source !== '' ){
+     qury_string = qury_string + "s_source=" + s_source ;
+   }else{s_source = getParameterByName('s_source') ;
+   if (s_source !== '' ){
+     qury_string = qury_string + "s_source=" + s_source ;}
+}
+
+  var s_medium = getParameterByName('utm_medium') ;
+  if (s_medium !== '' ){
+     qury_string = qury_string + "\u0026s_medium=" + s_medium ;
+   }else{s_medium = getParameterByName('s_medium') ;
+   if (s_medium !== '' ){
+     qury_string = qury_string + "\u0026s_medium=" + s_medium ;}
+}
+
+  var s_campaign = getParameterByName('utm_campaign') ;
+  if (s_campaign !== '' ){
+     qury_string = qury_string + "\u0026s_campaign=" + s_campaign ;
+   }else{s_campaign = getParameterByName('s_campaign') ;
+   if (s_campaign !== '' ){
+     qury_string = qury_string + "\u0026s_campaign=" + s_campaign ;}
+}
+
+$(function() {
+   $("a").attr('href', function(i, h) {
+if(typeof h !== "undefined"){
+if (document.location.href.indexOf('/blog/') === -1){
+  if (qury_string !== ''){
+     if (h.indexOf('#') !== 0  &&  h.indexOf('javascript') === -1){
+     return h + (h.indexOf('?') != -1 ?  "\u0026"+qury_string  : "?" + qury_string );
+   }
+ }
+}
+}
+   });
+});</script>  <script type='text/javascript'>jQuery(document).ready(function() {
+            jQuery('a').each(function() {
+                // Let's make external links open in a new window.
+                var href = jQuery(this).attr('href');
+                if (typeof href != 'undefined'){
+if  (href. indexOf('#') != -1 || href. indexOf('request-a-demo') != -1 || href. indexOf('request-demo') != -1  )  {
+                    jQuery(this).attr("rel", "nofollow");
+}
+                }
+            });
+        });</script>
+ <script>/* $(window).resize(function(){
+           jQuery('.video_overlay').css('height',jQuery('.video_url iframe').attr('height'));
+        });  */
+        $(document).ready(function () {
+            var owl = $("#owl-demo");
+
+            owl.owlCarousel({
+
+                // Define custom and unlimited items depending from the width
+                // If this option is set, itemsDeskop, itemsDesktopSmall, itemsTablet, itemsMobile etc. are disabled
+                // For better preview, order the arrays by screen size, but it's not mandatory
+                // Don't forget to include the lowest available screen size, otherwise it will take the default one for screens lower than lowest available.
+                // In the example there is dimension with 0 with which cover screens between 0 and 450px
+
+                itemsCustom: [
+                  [0, 1],
+                  [450, 1],
+                  [600, 3],
+                  [700, 3],
+                  [1000, 3],
+                  [1200, 3],
+                  [1400, 3],
+                  [1600, 3]
+                ],
+                center: true,
+                loop: true,
+                autoplay: true,
+                autoplayHoverPause: true,//touchMove:false,
+                autoplayTimeout: 6000,
+                stopOnHover: true,
+                speed: 800,
+                navigation: true,
+                addClassActive: true,
+                paginationNumbers: true,
+                dots: false,
+                navigationText: false,
+                items: 3,
+                dragBeforeAnimFinish: false,
+                lazyLoad: true,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    480: {
+                        items: 1
+                    },
+                    840: {
+                        items: 3
+                    }
+                }
+            });
+            $(".owl-nav").css("display", "block");
+            $(".owl-nav .owl-prev").html("");
+            $(".owl-nav .owl-next").html("");
+        });
+        $(".center").css("opacity", "1");</script> <script>new WOW().init();</script> <script>$("#backtotop").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });</script> <script>$("#backtotop1").click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });</script> <script>$(document).ready(function () {
+            $(window).scroll(function () {
+                var scrollTop = 2;
+                if ($(window).scrollTop() >= scrollTop) {
+                    $('.navbar-top').addClass('navbar-top-scrolled');
+                    $("body").addClass('navbar-is-scrolled');
+                }
+                if ($(window).scrollTop() < scrollTop) {
+                    $('.navbar-top').removeClass('navbar-top-scrolled');
+                    $("body").removeClass('navbar-is-scrolled');
+                }
+            })
+        })</script> <script>function isScrolledIntoView(elem) {
+        var $elem = $(elem);
+        var $window = $(window);
+
+        var docViewTop = $window.scrollTop();
+        var docViewBottom = docViewTop + $window.height();
+
+        var elemTop = $elem.offset().top;
+        var elemBottom = elemTop + $elem.height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+
+    }
+
+
+function show_step_2(){
+$("input#FirstName").css("display","none","height","0px");
+$("input#LastName").css("display","none","height","0px");
+$("input#Email").css("display","none","height","0px");
+$("#middle_submit").css("display","none","height","0px");
+
+$("input#Phone").css("display","block");
+$("input#Domain__c").css("display","block");
+$("button.mktoButton").css("display","block");
+}</script> <div class="rad_popup" id="rad_popup"><div class="rad_popup_inner"><div class="rad_popup_header"> <a href="http://wwwyotpo.staging.wpengine.com" role="home"> <img src="http://wwwyotpo.staging.wpengine.com/wp-content/themes/tg/images/Yotpo_Logo.svg" alt="YotPo logo" title="YotPo logo" widht="70" height="70" /> </a><div class="rad_popup_close" id="rad_popup_close"> <span></span> <span></span></div></div><div class="rad_popup_form_wrapper"><div class="rad_popup_form_container"><div class="rad_popup_form_table"><div class="rad_popup_form_tablecell"><div class="rad_popup_form"><h2>Interested in <strong>Yotpo</strong>?</h2><div class="rad_popup_subtitle"><p>Schedule a demo with one of our marketing consultants to learn how Yotpo <span style="color: #ffffff;">generates reviews</span> and turn them <span style="color: #ffffff;">into sales.</span></p></div><form id="mktoForm_1282"></form> <script>MktoForms2.loadForm("//app-lon04.marketo.com", "828-GCW-581", '1282',passUtmParams);</script> <div class="form_bottom_text" style="color:#56575f;font-size:13px;text-align:center;">It's completely FREE</div></div><div class="rad_popup_thankyou icon icon--order-success svg"> <svg xmlns="http://www.w3.org/2000/svg"   width="148" height="148" viewBox="0 0 72 72"> <g fill="none" stroke="#1cc286" stroke-width="2"> <circle cx="36" cy="36" r="35" style="stroke-dasharray:240px, 240px; stroke-dashoffset: 480px;"></circle> <path d="M17.417,37.778l9.93,9.909l25.444-25.393" style="stroke-dasharray:50px, 50px; stroke-dashoffset: 0px;"></path> </g> </svg><div class="thank_you_title">Thank you.</div><div class="thank_you_text" >We'll be in touch  ASAP.<br />In the meantime, enjoy these:</div><div class="ct-bottom"><div class="ct-cta ct-cta-left"><a href="/blog/">Our Blog</a></div><div class="ct-cta ct-cta-right"><a href="/resources/">Case Studies & Videos</a></div></div></div></div></div></div></div></div></div> <script>$(document).ready(function() {
+		// Handles the RAD Form
+		MktoForms2.whenReady(function (form){
+			var formid_from_rad_popup = $("#rad_popup form").attr("id");
+			formid_from_rad_popup = formid_from_rad_popup.replace("mktoForm_","");
+			if (form.getId() == formid_from_rad_popup) {
+				form.onSuccess(function(values, followUpUrl){
+					form.getFormElem().hide();
+					$("#rad_popup .rad_popup_form").css("display","none");
+					$("#rad_popup .rad_popup_thankyou").css('display','block');
+					return false;
+				});
+			}
+		});
+
+		// Handles the on click to open RAD popup
+		$(document).on("click", ".rad_popup_open", function() {
+			$("body").addClass("rad_popup_form_is_open");
+			return false;
+		});
+
+		$(document).on("click", "#rad_popup_close", function() {
+			$("body").removeClass("rad_popup_form_is_open");
+			return false;
+		});
+	});</script> <style type="text/css">/* RAD POPUP */
+.rad_popup {
+	background:url("http://wwwyotpo.staging.wpengine.com/wp-content/themes/tg/images/rad_popup_bg.jpg") #1c1e2a no-repeat;
+	height:100vh;
+	position: fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	width:100%;
+	z-index: 99999999;
+	pointer-events:none;
+	opacity:0;
+}
+body.rad_popup_form_is_open #rad_popup {
+    -webkit-transition: all .3s cubic-bezier(.3,.1,.58,1);
+    -moz-transition: all .3s cubic-bezier(.3,.1,.58,1);
+    -o-transition: all .3s cubic-bezier(.3,.1,.58,1);
+    -ms-transition: all .3s cubic-bezier(.3,.1,.58,1);
+    transition: all .3s cubic-bezier(.3,.1,.58,1);
+	pointer-events:all;
+	opacity:1;
+}
+.rad_popup_inner {
+	position: absolute;
+	height:100%;
+	width:100%;
+	border-top:6px solid #2f84ed;
+}
+.rad_popup_header {
+    position: relative;
+    z-index: 99;
+    margin: 36px 30px 0 20px;
+}
+.rad_popup_header img {
+    display: inline-block;
+    max-height: 70px;
+    margin: auto;
+    width: auto;
+}
+.rad_popup_header a {
+	float:left;
+}
+.rad_popup_close {
+    float: right;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    margin-top: -3px;
+    -webkit-transition: all .2s cubic-bezier(.3,.1,.58,1);
+    -moz-transition: all .2s cubic-bezier(.3,.1,.58,1);
+    -o-transition: all .2s cubic-bezier(.3,.1,.58,1);
+    -ms-transition: all .2s cubic-bezier(.3,.1,.58,1);
+    transition: all .2s cubic-bezier(.3,.1,.58,1);
+}
+.rad_popup_close:hover {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+}
+.rad_popup_close span {
+    height: 2px;
+    width: 30px;
+    background: #fff;
+    display: block;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    position: relative;
+    top: 10px;
+    right: 3px;
+}
+.rad_popup_close span:last-child {
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    top: 8px;
+}
+.rad_popup_form_wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 0;
+    height: 100vh;
+}
+.rad_popup_form_container {
+	max-width: 500px;
+	margin:0 auto;
+	position: relative;
+	height:100vh;
+}
+.rad_popup_form_table {
+	display: table;
+	width:100%;
+	height:100%;
+}
+.rad_popup_form_tablecell {
+	display: table-cell;
+	vertical-align: middle;
+}
+.rad_popup_form_wrapper h2 {
+    font-weight: 300;
+    font-size: 47px;
+    color:#fff;
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.rad_popup_subtitle {
+    color: #9ea6b9;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.rad_popup_form_wrapper form div:first-of-type .mktoFormCol {
+	width:49.5% !important;
+
+}
+.rad_popup_form_wrapper .mktoForm input[type=text],
+.rad_popup_form_wrapper .mktoForm input[type=url],
+.rad_popup_form_wrapper .mktoForm input[type=email],
+.rad_popup_form_wrapper .mktoForm input[type=tel],
+.rad_popup_form_wrapper .mktoForm input[type=number],
+.rad_popup_form_wrapper .mktoForm input[type=date],
+.rad_popup_form_wrapper .mktoForm textarea.mktoField, .mktoForm select.mktoField {
+	height: 50px !important;
+}
+.rad_popup_form_wrapper .mktoError {
+    right: 39px !important;
+    bottom: -30px !important;
+}
+
+.rad_popup_form_wrapper form div:first-of-type .mktoFormCol {
+	margin-left: 0 !important;
+}
+.rad_popup_form_wrapper .form_bottom_text{
+    color: #9ea6b9 !important;
+    font-size: 14px !important;
+    font-weight: 400;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.rad_popup_form_wrapper .icon {
+	display: none;
+    text-align: center;
+}
+body.rad_popup_form_is_open { overflow: hidden; }
+
+.rad_popup_form_wrapper .icon--order-success svg circle {
+    -webkit-animation: checkmark-circle .6s ease-in-out backwards;
+    animation: checkmark-circle .6s ease-in-out backwards;
+}
+.rad_popup_form_wrapper .icon--order-success svg path {
+    -webkit-animation: checkmark .25s ease-in-out .7s backwards;
+    animation: checkmark .25s ease-in-out .7s backwards;
+}
+.rad_popup_form_wrapper .thank_you_title {
+    color: #fff;
+    font-size: 47px;
+    font-weight: 300;
+    line-height: 60px;
+    padding-top: 20px;
+}
+.rad_popup_form_wrapper .thank_you_text {
+    color: #9ea6b9;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 26px;
+}
+.rad_popup_form_wrapper .ct-bottom {
+    text-align: center;
+    color: #fff;
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 75px;
+}
+.rad_popup_form_wrapper .ct-bottom .ct-cta-left { padding-right: 4px; }
+.rad_popup_form_wrapper .ct-bottom .ct-cta-right { padding-left: 4px;  }
+.rad_popup_form_wrapper .ct-bottom .ct-cta { display: inline-block; }
+.rad_popup_form_wrapper .ib-top-row .ib-cta, .rad_popup_form_wrapper .ct-bottom .ct-cta { margin-top: 40px; }
+.rad_popup_form_wrapper .ct-bottom .ct-cta-left a {
+    border-radius: 5px;
+    padding: 12px 25px;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all .2s ease-in-out;
+    -webkit-box-shadow: inset 0 0 0 2px #fec600;
+    -moz-box-shadow: inset 0 0 0 2px #fec600;
+    box-shadow: inset 0 0 0 2px #fec600;
+    min-width: 180px;
+    text-align: center;
+    display: inline-block;
+}
+.rad_popup_form_wrapper .ct-bottom .ct-cta-left a:hover, .rad_popup_form_wrapper .ct-bottom .ct-cta-left a:focus {
+    background: #fec600 !important;
+    color: #56575f !important;
+	-webkit-box-shadow: inset 0 0 0 2px #ffd200;
+	-moz-box-shadow: inset 0 0 0 2px #ffd200;
+	box-shadow: inset 0 0 0 2px #ffd200;
+}
+.rad_popup_form_wrapper .ct-bottom .ct-cta-right a {
+    background: #fec600;
+    border-radius: 5px;
+    padding: 12px 25px;
+    text-align: center;
+    color: #56575f;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    min-width: 180px;
+    text-align: center;
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+	.rad_popup_header {
+		text-align: center;
+		margin:20px 0 0 0;
+	}
+	.rad_popup_header a { float:none; }
+	.rad_popup_close {
+		float:none;
+		position: absolute;
+		top:0;
+		right:20px;
+	}
+	.rad_popup_form_wrapper h2 {
+		font-size: 24px;
+		line-height: 33px;
+	}
+	.rad_popup_form_wrapper{
+		position: relative;
+		height: auto;
+		margin-bottom: 35px;
+	}
+	.rad_popup { overflow-y:scroll; }
+	.rad_popup_form_container { height: auto; margin-top: 25px; }
+	.rad_popup_subtitle {
+		font-size: 14px;
+		padding:0 20px;
+	}
+	.rad_popup_form_wrapper form div:first-of-type .mktoFormCol {
+		margin-right: 0 !important;
+		margin-left: 0 !important;
+		width:100% !important;
+	}
+	.rad_popup_form_wrapper form.mktoForm {
+		width:90% !important;
+		margin:0 auto;
+	}
+	.rad_popup_form_wrapper .mktoForm input[type=text],
+	.rad_popup_form_wrapper .mktoForm input[type=url],
+	.rad_popup_form_wrapper .mktoForm input[type=email],
+	.rad_popup_form_wrapper .mktoForm input[type=tel],
+	.rad_popup_form_wrapper .mktoForm input[type=number],
+	.rad_popup_form_wrapper .mktoForm input[type=date],
+	.rad_popup_form_wrapper .mktoForm textarea.mktoField, .mktoForm select.mktoField {
+		height: 41px !important;
+	}
+	.rad_popup_form_wrapper .mktoForm .mktoRequiredField label.mktoLabel { display: none !important; }
+	.rad_popup_form_wrapper .mktoForm .mktoFormCol { margin-bottom: 5px !important; }
+	.rad_popup_form_wrapper .mktoForm .mktoButtonWrap.mktoSimple .mktoButton { margin-top: 5px !important; }
+	.rad_popup_form_wrapper .ib-top-row .ib-cta, .rad_popup_form_wrapper .ct-bottom .ct-cta { margin-top: 20px; }
+}
+/* EOF RAD POPUP */</style></body></html>
